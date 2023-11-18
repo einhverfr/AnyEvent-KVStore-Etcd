@@ -1,4 +1,4 @@
-use 5.006;
+use 5.010;
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -14,11 +14,18 @@ my %WriteMakefileArgs = (
         'ExtUtils::MakeMaker' => '0',
     },
     TEST_REQUIRES => {
-        'Test::More' => '0',
+        'MIME::Base64'  => 0,
+        'Test::More'    => 0,
+        'Capture::Tiny' => 0,
+        'Data::Dumper'  => 0,
+        'AnyEvent'      => 0,
     },
     PREREQ_PM => {
-        #'ABC'              => '1.6',
-        #'Foo::Bar::Module' => '5.0401',
+        'AnyEvent::KVStore' => 0,
+        'Net::Etcd'         => 0,
+        'JSON'              => 0,
+        'Type::Tiny'        => 0,
+        'Types::Standard'   => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'AnyEvent-KVStore-Etcd-*' },
